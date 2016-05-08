@@ -23,7 +23,10 @@ app.use(express.static('public'));
 // ==========================
 
 app.get("/", function(request, response) {
-	response.render('home', {title: "My Site"});
+	var favoriteNumbers = [5, 7, 16];
+	response.render('home', {
+		title: "My Site",
+	favorites: favoriteNumbers });
 });
 app.get("/projects", function(request, response) {
 	response.render('projects', {title: "My Projects"});
