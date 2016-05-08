@@ -24,9 +24,14 @@ app.use(express.static('public'));
 
 app.get("/", function(request, response) {
 	var favoriteNumbers = [5, 7, 16];
+	var favoriteLinks = [
+		{ text: 'Facebook', url: 'http://facebook.com' },
+		{ text: 'Github', url: 'http://github.com'}
+	];
 	response.render('home', {
-		title: "My Site",
-	favorites: favoriteNumbers });
+	title: "home page",
+	favorites: favoriteNumbers,
+	links: favoriteLinks });
 });
 app.get("/projects", function(request, response) {
 	response.render('projects', {title: "My Projects"});
