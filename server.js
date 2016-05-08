@@ -36,6 +36,24 @@ app.get("/", function(request, response) {
 app.get("/projects", function(request, response) {
 	response.render('projects', {title: "My Projects"});
 });
+app.get("/books", function(request, response) {
+	var myBooks = [
+		{ text: 'JavaScript: The Good Parts',
+		  url: 'http://www.amazon.com/JavaScript-Good-Parts-Douglas-Crockford/dp/0596517742/ref=sr_1_5?ie=UTF8&qid=1462735324&sr=8-5&keywords=javascript',
+		  author: 'Douglas Crockford'},
+		{ text: 'The Principles of Object-Oriented JavaScript',
+		  url: 'http://www.amazon.com/Principles-Object-Oriented-JavaScript-Nicholas-Zakas/dp/1593275404/ref=sr_1_7?ie=UTF8&qid=1462735324&sr=8-7&keywords=javascript',
+		  author: 'Nicholas C. Zakas' },
+		{ text: "JavaScript Patterns",
+		url: 'http://www.amazon.com/JavaScript-Patterns-Stoyan-Stefanov/dp/0596806752/ref=sr_1_9?ie=UTF8&qid=1462735324&sr=8-9&keywords=javascript', 
+		author: 'Stoyan Stefanov' }
+		];
+	
+	response.render('books', {
+		title: "My Books",
+	    books: myBooks});
+});
+
 //============================
 // server 
 // ===========================
