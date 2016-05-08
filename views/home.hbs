@@ -1,3 +1,8 @@
 <h1> Home Page </h1>
 
-{{ favorites }}
+<h2> Favorite Numbers</h2>
+<ul>
+{{ #each favorites as |favorite| }}
+	<li> {{favorite}} </li>
+{{/each}}
+</ul>
