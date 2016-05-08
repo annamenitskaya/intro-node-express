@@ -1,7 +1,7 @@
 {
   "name": "wwc_workshop_prep",
   "version": "1.0.0",
-  "description": "",
+  "description": "### Computer setup",
   "main": "index.js",
   "scripts": {
     "start": "node app.js"
@@ -11,5 +11,14 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.13.4"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wykhuh/www-workshop-prep.git"
+  },
+  "bugs": {
+    "url": "https://github.com/wykhuh/www-workshop-prep/issues"
+  },
+  "homepage": "https://github.com/wykhuh/www-workshop-prep#readme"
 }
