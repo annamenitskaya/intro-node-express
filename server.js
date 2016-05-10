@@ -3,6 +3,7 @@ var app = express();
 var exphbs = require('express-handlebars');
 var port = process.env.PORT || 3000;
 var axios = require('axios');
+var githubService = require('./services/githubService.js');
 
 // ==========================
 // middleware & config 
@@ -40,15 +41,10 @@ app.get("/", function(request, response) {
 	links: favoriteLinks });
 });
 app.get("/projects", function(request, response) {
-	var options = {
-		headers: {
-'User-Agent': 'fierceblonde'
-		}
-	};
-	axios.get('https://api.github.com/users/fierceblonde', options)
+	githubService.githubInfo()
 	.then(function(results) {
 	
-	response.render('projects', {title: "My Projects", bio: results.data});
+	response.render('projects', {title: "My Projects", bio: results.bio, repos: results.repos});
 	});
 	
 	
