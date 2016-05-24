@@ -1,5 +1,9 @@
 var axios = require('axios');
-require('dotenv').config();
+
+if (process.env.NODE_ENV === 'development') {
+	require('dontenv').config();
+}
+
 
 var githubService = function() {
 	var options = {
