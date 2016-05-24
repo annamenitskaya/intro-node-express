@@ -4,7 +4,8 @@
   "description": "### Computer setup",
   "main": "index.js",
   "scripts": {
-    "start": "node app.js"
+    "start": "NODE_ENV=production node server.js", 
+	 "dev": "NODE_ENV=development nodemon server.js"
   },
   "keywords": [],
   "author": "",

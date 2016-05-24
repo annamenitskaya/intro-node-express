@@ -1,7 +1,7 @@
 var axios = require('axios');
 
 if (process.env.NODE_ENV === 'development') {
-	require('dontenv').config();
+	require('dotenv').config();
 }
 
 
