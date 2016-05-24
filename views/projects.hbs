@@ -5,7 +5,7 @@
     <ul class="list-group">
       <li class="list-group-item">  <img src="{{bio.avatar_url}}" class="img-rounded img-responsive"/></li>
       <li class="list-group-item">{{bio.name}}</li>
-      <li class="list-group-item">Date joined: {{bio.created_at}}</li>
+      <li class="list-group-item">Date joined: {{formatDate bio.created_at 'MMMM D, YYYY'}}</li>
     </ul>
   </div>
 
@@ -31,7 +31,7 @@
 		  
 		  {{/if}}
         <p class="repo-list-meta">
-         updated at: {{ repo.updated_at}}
+         updated at: {{ formatDate repo.updated_at 'MMMM D, YYYY'}}
         </p>
       </li>
 		{{/each}}
