@@ -10,8 +10,18 @@ function readFile(repoName, callback) {
 	});
 					  
 }
+	function fileExists(repoName) {
+	var filePath = path.join(__dirname, '../data', repoName+ '.html');	
+		try {
+			return fs.statSync(filePath).isFile() 
+		} catch(err) {
+			return false;
+		}
+	}
+	
 	return {
-		readFile: readFile
+		readFile: readFile,
+		fileExists: fileExists
 	};
 
 };

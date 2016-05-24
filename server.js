@@ -50,17 +50,31 @@ app.get("/", function (request, response) {
 });
 app.get("/projects", function (request, response) {
 	githubService.githubInfo()
-		.then(function (results) {
+	.then(function (results) {
+		
+	var repos = results.repos;
+		repos.forEach(function(repo, index) {
+	repos[index].hasPost = projectInfoService.fileExists(repo.name);	
+			  
+			
+		});
+		
+	
 
 			response.render('projects', {
 				title: "My Projects",
 				bio: results.bio,
 				repos: results.repos
-			});
-		});
-
+			}
+			);
+		})
+.catch(function (err) {
+	console.log('err: ', err);
+});
 
 });
+
+
 app.get("/books", function (request, response) {
 	var myBooks = [
 		{

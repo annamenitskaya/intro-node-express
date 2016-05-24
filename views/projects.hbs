@@ -24,6 +24,12 @@
         <p>
           {{repo.description}}
         </p>
+		  {{#if repo.hasPost}}
+		  <p>
+			  <a href="/projects/{{repo.name}}">More Info </a>
+		  </p>
+		  
+		  {{/if}}
         <p class="repo-list-meta">
          updated at: {{ repo.updated_at}}
         </p>
